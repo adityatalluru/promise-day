@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Promise Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: white;
+    color: #ff4e73;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ffe6eb;
+}
+
+#promiseText {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 60px;
+}
+
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Promise Day 💖</h1>
+    <p>Hey My Love… I have something for you 🥰</p>
+    <button onclick="startPromise()">Open My Promise</button>
+    <div id="promiseText"></div>
+</div>
+
+<script>
+
+const message = "I promise to stand with you in every storm, laugh with you in every joy, support your dreams, and love you a little more every single day. You are my forever ❤️";
+
+let i = 0;
+
+function startPromise() {
+    document.querySelector("button").style.display = "none";
+    typeWriter();
+}
+
+function typeWriter() {
+    if (i < message.length) {
+        document.getElementById("promiseText").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+
+}, 500);
+
+</script>
+
+</body>
+</html>
