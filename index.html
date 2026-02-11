@@ -18,19 +18,21 @@ body {
 }
 
 .container {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.2);
     backdrop-filter: blur(15px);
     padding: 40px;
     border-radius: 20px;
-    color: white;
-    width: 80%;
+    width: 85%;
     max-width: 700px;
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
+    color: #9b1c45;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 h1 {
     font-size: 32px;
+    color: #9b1c45;
 }
 
 button {
@@ -40,27 +42,28 @@ button {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    background: white;
-    color: #ff4e73;
+    background: #9b1c45;
+    color: white;
     font-weight: bold;
     transition: 0.3s;
 }
 
 button:hover {
     transform: scale(1.1);
-    background: #ffe6eb;
+    background: #7a1636;
 }
 
 #promiseText {
     margin-top: 20px;
     font-size: 18px;
     min-height: 60px;
-    white-space: pre-line; /* keeps line breaks */
+    white-space: pre-line;
+    line-height: 1.6;
 }
 
 .heart {
     position: absolute;
-    color: white;
+    color: rgba(255,255,255,0.7);
     font-size: 20px;
     animation: float 5s linear infinite;
 }
